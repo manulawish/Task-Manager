@@ -1,9 +1,9 @@
-//when you setup the project in your PC no need to run this command again
+//After setting up the project on your PC, you don’t need to run this command again:
 dotnet ef migrations add InitialCreate -c AppDbContext --project ./TaskManagementApp.Infrastructure --startup-project ./TaskManagementApp.API
 
 
-// just run this command inside the TaskManagementApp.API folder to update or create the database in your local machine
-// befor runnig this command make sure you have the corect connection string in the appsettings.json file
+// To update or create the database on your local machine, run the following command inside the TaskManagementApp.API folder.
+// Before running this command, ensure the correct connection string is specified in appsettings.json:
 dotnet ef database update -c AppDbContext --startup-project ./TaskManagementApp.API --project ./TaskManagementApp.Infrastructure
 
 // There are cuple of method to create a user in the database.
