@@ -1,0 +1,22 @@
+# === .NET Core ignores ===
+bin/
+obj/
+*.user
+*.vs/
+.vs/
+*.db
+*.db-journal
+
+# === Visual Studio config ===
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# === Angular/Node ignores ===
+node_modules/
+dist/
+tmp/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

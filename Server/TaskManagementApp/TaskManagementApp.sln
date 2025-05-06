@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagementApp.API", "TaskManagementApp.API\TaskManagementApp.API.csproj", "{FE1FF550-3E08-4302-BD06-0253AEAB353B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagementApp.Application", "TaskManagementApp.Application\TaskManagementApp.Application.csproj", "{B9BEA0BD-ED74-4B1D-BC8F-AFA2D816E729}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagementApp.Domain", "TaskManagementApp.Domain\TaskManagementApp.Domain.csproj", "{20B74ABD-CDF9-4E2F-B4E6-1E84666CBD23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagementApp.Infrastructure", "TaskManagementApp.Infrastructure\TaskManagementApp.Infrastructure.csproj", "{80DEADBA-F947-496D-A4A5-EEC20946D2C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Task Manager\read me.txt = ..\..\Task Manager\read me.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE1FF550-3E08-4302-BD06-0253AEAB353B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1FF550-3E08-4302-BD06-0253AEAB353B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1FF550-3E08-4302-BD06-0253AEAB353B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1FF550-3E08-4302-BD06-0253AEAB353B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9BEA0BD-ED74-4B1D-BC8F-AFA2D816E729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9BEA0BD-ED74-4B1D-BC8F-AFA2D816E729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9BEA0BD-ED74-4B1D-BC8F-AFA2D816E729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9BEA0BD-ED74-4B1D-BC8F-AFA2D816E729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20B74ABD-CDF9-4E2F-B4E6-1E84666CBD23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20B74ABD-CDF9-4E2F-B4E6-1E84666CBD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20B74ABD-CDF9-4E2F-B4E6-1E84666CBD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20B74ABD-CDF9-4E2F-B4E6-1E84666CBD23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80DEADBA-F947-496D-A4A5-EEC20946D2C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80DEADBA-F947-496D-A4A5-EEC20946D2C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80DEADBA-F947-496D-A4A5-EEC20946D2C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80DEADBA-F947-496D-A4A5-EEC20946D2C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4272D93D-A447-407E-AD19-C48EF59B4325}
+	EndGlobalSection
+EndGlobal

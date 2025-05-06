@@ -1,0 +1,105 @@
+<div class="task-container">
+  <div class="header">
+    <h1>Task Manager</h1>
+    <div class="header-actions">
+      <button mat-raised-button color="warn" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+      <button mat-raised-button color="primary" (click)="openCreateDialog()">
+        <mat-icon>add</mat-icon>
+        New Task
+      </button>
+    </div>
+  </div>
+
+  <mat-form-field class="filter-field">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search tasks..." #input>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="filteredTasks" matSort (matSortChange)="sortData($event)" class="mat-elevation-z8">
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+      <td mat-cell *matCellDef="let task">
+        <ng-container *ngIf="editingTaskId !== task.id; else editTitle">
+          {{task.title}}
+        </ng-container>
+        <ng-template #editTitle>
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Title</mat-label>
+            <input matInput [formControl]="taskForm.controls.title" placeholder="Enter title">
+            <mat-error *ngIf="taskForm.controls.title?.invalid">
+              Title is required and must be at least 3 characters
+            </mat-error>
+          </mat-form-field>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+      <td mat-cell *matCellDef="let task">
+        <ng-container *ngIf="editingTaskId !== task.id; else editDescription">
+          {{task.description}}
+        </ng-container>
+        <ng-template #editDescription>
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Description</mat-label>
+            <textarea matInput [formControl]="taskForm.controls.description" placeholder="Enter description"></textarea>
+            <mat-error *ngIf="taskForm.controls.description?.invalid">
+              Description is required and must be at least 10 characters
+            </mat-error>
+          </mat-form-field>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <!-- Completed Column -->
+    <ng-container matColumnDef="isCompleted">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+      <td mat-cell *matCellDef="let task">
+        <ng-container *ngIf="editingTaskId !== task.id; else editCompleted">
+          <mat-checkbox [checked]="task.isCompleted" disabled></mat-checkbox>
+        </ng-container>
+        <ng-template #editCompleted>
+          <mat-checkbox [formControl]="taskForm.controls.isCompleted"></mat-checkbox>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <!-- Created At Column -->
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Created At </th>
+      <td mat-cell *matCellDef="let task"> {{task.createdAt | date:'medium'}} </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let task">
+        <ng-container *ngIf="editingTaskId !== task.id; else editActions">
+          <button mat-icon-button color="primary" (click)="startEdit(task)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteTask(task.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </ng-container>
+        <ng-template #editActions>
+          <button mat-icon-button color="primary" (click)="saveEdit()" [disabled]="!taskForm.valid">
+            <mat-icon>save</mat-icon>
+          </button>
+          <button mat-icon-button (click)="cancelEdit()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
